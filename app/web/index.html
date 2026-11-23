@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スクリーン設定</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top">
+      <div>
+        <p class="eyebrow">Motivnavi Screen Tweaks</p>
+        <h1>画面の持続時間</h1>
+      </div>
+      <p class="current" id="current">現在の設定を読み込み中…</p>
+    </header>
+
+    <!-- モード選択画面 -->
+    <section id="select-view">
+      <div class="modes" id="modes" role="radiogroup" aria-label="モード"></div>
+
+      <div class="warning" role="alert">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1.5 21h21L12 3Zm0 6v5m0 3.2v.3" /></svg>
+        <p><strong>現在のスクリーン設定が変わります。</strong><br>
+          OKを押すと、画面が暗くなるまでの時間とスリープするまでの時間が、選んだモードの内容に書き換えられます。</p>
+      </div>
+
+      <footer class="actions">
+        <button class="btn ghost" id="cancel" type="button">キャンセル</button>
+        <button class="btn primary" id="ok" type="button" disabled>OK</button>
+      </footer>
+    </section>
+
+    <!-- 完了画面 -->
+    <section id="done-view" hidden>
+      <div class="done">
+        <div class="done-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" /></svg>
+        </div>
+        <h2 id="done-title">切り替えました</h2>
+        <p id="done-text"></p>
+        <p class="note" id="done-note" hidden></p>
+      </div>
+      <footer class="actions">
+        <button class="btn primary" id="close" type="button">閉じる</button>
+      </footer>
+    </section>
+
+    <p class="error" id="error" hidden></p>
+  </main>
+
+  <template id="mode-template">
+    <button class="mode" type="button" role="radio" aria-checked="false">
+      <span class="mode-icon"></span>
+      <span class="mode-body">
+        <span class="mode-head">
+          <span class="mode-name"></span>
+          <span class="badge" hidden>現在の設定</span>
+        </span>
+        <span class="mode-desc"></span>
+        <span class="chips">
+          <span class="chip">電源接続中 <b>常時点灯</b></span>
+          <span class="chip">バッテリー <b class="dim"></b>で暗く</span>
+          <span class="chip"><b class="sleep"></b>でスリープ</span>
+        </span>
+      </span>
+      <span class="radio" aria-hidden="true"></span>
+    </button>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>

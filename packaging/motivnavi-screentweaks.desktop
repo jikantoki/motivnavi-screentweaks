@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Screen Tweaks
+Name[ja]=スクリーン設定
+Comment=Switch screen timeout between PC mode and car navigation mode
+Comment[ja]=画面の持続時間をPCモード／カーナビモードに切り替えます
+Exec=motivnavi-screentweaks
+Icon=motivnavi-screentweaks
+Terminal=false
+Categories=Settings;System;
+Keywords=screen;display;power;sleep;navi;画面;スリープ;カーナビ;
+StartupWMClass=motivnavi-screentweaks
